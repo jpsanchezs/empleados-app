@@ -1,0 +1,23 @@
+<div class="container mt-4">
+  <h2 class="mb-3">Lista de empleados</h2>
+  <a routerLink="/insertar" class="btn btn-primary mb-3">Insertar empleado</a>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Id</th>
+          <th>Nombre</th>
+          <th>Salario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of empleados">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.nombre }}</td>
+          <td>{{ emp.salario | currency:'CRC' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

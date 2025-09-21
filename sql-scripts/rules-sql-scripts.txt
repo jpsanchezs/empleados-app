@@ -1,0 +1,13 @@
+Al crear un script en SMSS se usarán las siguientes reglas para nombrar los archivos:
+
+1. Procedimiento almacenado -> SP_Nombre.sql 
+Ejemplo: SP_InsertarEmpleado.sql
+
+2. Tablas -> TB_Nombre 
+Ejemplo: TB_Empleados.sql
+
+3. Pruebas de procedimientos almacenados -> Test_NombreSP  
+Ejemplo: Test_InsertarEmpleadoSP.sql
+
+4. Carga de datos -> Load_nombre_versión 
+Ejemplo: Load_Xml_v1.sql

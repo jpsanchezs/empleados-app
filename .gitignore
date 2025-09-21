@@ -1,0 +1,14 @@
+# Angular
+angular-app/node_modules/
+angular-app/dist/
+angular-app/.angular/cache/
+
+# ASP.NET Web API
+aspnet-api/bin/
+aspnet-api/obj/
+aspnet-api/.vs/
+aspnet-api/aspnet-api.csproj.user
+
+# Seguridad: configuracion sensible
+**/appsettings.json
+**/appsettings.*.json
