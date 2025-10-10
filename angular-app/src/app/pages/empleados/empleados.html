@@ -2,20 +2,39 @@
   <h2 class="mb-3">Lista de empleados</h2>
   <a routerLink="/insertar" class="btn btn-primary mb-3">Insertar empleado</a>
 
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <input type="text" [(ngModel)]="filtroCedula" placeholder="Buscar por cédula" class="form-control" />
+      <button class="btn btn-outline-primary mt-2" (click)="buscarPorCedula()">Buscar por cédula</button>
+    </div>
+    <div class="col-md-6">
+      <input type="text" [(ngModel)]="filtroNombre" placeholder="Buscar por nombre" class="form-control" />
+      <button class="btn btn-outline-primary mt-2" (click)="buscarPorNombre()">Buscar por nombre</button>
+    </div>
+  </div>
+
   <div class="table-responsive">
     <table class="table table-bordered table-hover align-middle text-center">
       <thead class="table-dark">
         <tr>
           <th>Id</th>
           <th>Nombre</th>
-          <th>Salario</th>
+          <th>Cédula</th>
+          <th>Puesto</th>
+          <th>Fecha Contratación</th>
+          <th>Saldo Vacaciones</th>
+          <th>Activo</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let emp of empleados">
           <td>{{ emp.id }}</td>
           <td>{{ emp.nombre }}</td>
-          <td>{{ emp.salario | currency:'CRC' }}</td>
+          <td>{{ emp.valorDocumentoIdentidad }}</td>
+          <td>{{ emp.puesto }}</td>
+          <td>{{ emp.fechaContratacion | date }}</td>
+          <td>{{ emp.saldoVacaciones | currency:'CRC' }}</td>
+          <td>{{ emp.esActivo ? 'Sí' : 'No' }}</td>
         </tr>
       </tbody>
     </table>
