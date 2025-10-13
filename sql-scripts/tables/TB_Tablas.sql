@@ -97,28 +97,11 @@ CREATE TABLE dbo.DBError
 );
 GO
 
--- Tabla Error (cat·logo de errores)
+-- Tabla Error (cat√°logo de errores)
 CREATE TABLE dbo.Error
 (
     Id INT IDENTITY(1,1) NOT NULL PRIMARY KEY
     ,Codigo NVARCHAR(100) NOT NULL UNIQUE
     ,Descripcion NVARCHAR(1000) NOT NULL
 );
-GO
-
--- Õndices
-CREATE INDEX IX_Empleado_ValorDocumentoIdentidad ON dbo.Empleado(ValorDocumentoIdentidad);
-CREATE INDEX IX_Movimiento_IdEmpleado ON dbo.Movimiento(IdEmpleado);
-CREATE INDEX IX_Movimiento_PostTime ON dbo.Movimiento(PostTime);
-CREATE INDEX IX_BitacoraEvento_PostTime ON dbo.BitacoraEvento(PostTime);
-GO
-
--- Asegurar que TipoMovimiento.TipoAccion tenga valores esperados (Credito/Debito)
-ALTER TABLE dbo.TipoMovimiento
-ADD CONSTRAINT CHK_TipoMovimiento_TipoAccion CHECK (TipoAccion IN (N'Credito', N'Debito'));
-GO
-
--- Evitar inserciones duplicadas de Empleado por Nombre o ValorDocumentoIdentidad
-CREATE UNIQUE INDEX UX_Empleado_ValorDocumentoIdentidad ON dbo.Empleado(ValorDocumentoIdentidad);
-CREATE UNIQUE INDEX UX_Empleado_Nombre ON dbo.Empleado(Nombre);
 GO
